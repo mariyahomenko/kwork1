@@ -37,7 +37,6 @@ def Addrow4():
 #        ui.tableWidget.removeRow(ui.tableWidget.rowCount()-1)
 
 
-
 def Summ1():
     rows = ui.tableWidget.rowCount()
     cols = ui.tableWidget.columnCount()
@@ -54,8 +53,21 @@ def Summ1():
         a = (sum(data, []))
         a[0] = '0'
         c = [Decimal(item) for item in a]
-        result = (sum(c))
-        ui.lineEdit_8.setText(str(result))
+        res = (sum(c))
+        result = str(res)
+        if '.' in result:
+            a = result
+            b = float(a)
+            c = round(b, 8)
+            ui.lineEdit_8.setText(str(c))
+        elif '.' in result and result[-1] == '0':
+            result = result[:-1]
+            ui.lineEdit_8.setText(result)
+        elif result[-1] == '.':
+            result = result[:-1]
+            ui.lineEdit_8.setText(result)
+        else:
+            ui.lineEdit_8.setText(result)
     except:
         ui.lineEdit_8.setText('wrong')
 def Summ2():
@@ -74,8 +86,21 @@ def Summ2():
         a = (sum(data, []))
         a[0] = '0'
         c = [Decimal(item) for item in a]
-        result = (sum(c))
-        ui.lineEdit_14.setText(str(result))
+        res = (sum(c))
+        result = str(res)
+        if '.' in result:
+            a = result
+            b = float(a)
+            c = round(b, 8)
+            ui.lineEdit_14.setText(str(c))
+        elif '.' in result and result[-1] == '0':
+            result = result[:-1]
+            ui.lineEdit_14.setText(result)
+        elif result[-1] == '.':
+            result = result[:-1]
+            ui.lineEdit_14.setText(result)
+        else:
+            ui.lineEdit_14.setText(result)
     except:
         ui.lineEdit_14.setText('wrong')
 def Summ3():
@@ -94,8 +119,21 @@ def Summ3():
         a = (sum(data, []))
         a[0] = '0'
         c = [Decimal(item) for item in a]
-        result = (sum(c))
-        ui.lineEdit_20.setText(str(result))
+        res = (sum(c))
+        result = str(res)
+        if '.' in result:
+            a = result
+            b = float(a)
+            c = round(b, 8)
+            ui.lineEdit_20.setText(str(c))
+        elif '.' in result and result[-1] == '0':
+            result = result[:-1]
+            ui.lineEdit_20.setText(result)
+        elif result[-1] == '.':
+            result = result[:-1]
+            ui.lineEdit_20.setText(result)
+        else:
+            ui.lineEdit_20.setText(result)
     except:
         ui.lineEdit_20.setText('wrong')
 def Summ4():
@@ -114,44 +152,125 @@ def Summ4():
         a = (sum(data, []))
         a[0] = '0'
         c = [Decimal(item) for item in a]
-        result = (sum(c))
-        ui.lineEdit_27.setText(str(result))
+        res = (sum(c))
+        result = str(res)
+        if '.' in result:
+            a = result
+            b = float(a)
+            c = round(b, 8)
+            ui.lineEdit_27.setText(str(c))
+        elif '.' in result and result[-1] == '0':
+            result = result[:-1]
+            ui.lineEdit_27.setText(result)
+        elif result[-1] == '.':
+            result = result[:-1]
+            ui.lineEdit_27.setText(result)
+        else:
+            ui.lineEdit_27.setText(result)
     except:
         ui.lineEdit_27.setText('wrong')
 
 
 def Prcnt1():
-    a = ui.lineEdit_8.text()
-    b = ui.lineEdit_4.text()
-    try:
-        fin = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
-        ui.lineEdit_6.setText(str(fin))
-    except:
-        ui.lineEdit_6.setText('wrong')
+    if ui.lineEdit_4.text() == '0':
+        s = ui.lineEdit_8.text()
+        ui.lineEdit_6.setText(s)
+    else:
+        a = ui.lineEdit_8.text()
+        b = ui.lineEdit_4.text()
+        try:
+            res = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
+            result = str(res)
+            if '.' in result:
+                a = result
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_6.setText(str(c))
+            elif '.' in result and result[-1] == '0':
+                result = result[:-1]
+                ui.lineEdit_6.setText(result)
+            elif result[-1] == '.':
+                result = result[:-1]
+                ui.lineEdit_6.setText(result)
+            else:
+                ui.lineEdit_6.setText(result)
+        except:
+            ui.lineEdit_6.setText('wrong')
 def Prcnt2():
-    a = ui.lineEdit_14.text()
-    b = ui.lineEdit_10.text()
-    try:
-        fin = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
-        ui.lineEdit_11.setText(str(fin))
-    except:
-        ui.lineEdit_11.setText('wrong')
+    if ui.lineEdit_10.text() == '0':
+        s = ui.lineEdit_14.text()
+        ui.lineEdit_11.setText(s)
+    else:
+        a = ui.lineEdit_14.text()
+        b = ui.lineEdit_10.text()
+        try:
+            res = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
+            result = str(res)
+            if '.' in result:
+                a = result
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_11.setText(str(c))
+            elif '.' in result and result[-1] == '0':
+                result = result[:-1]
+                ui.lineEdit_11.setText(result)
+            elif result[-1] == '.':
+                result = result[:-1]
+                ui.lineEdit_11.setText(result)
+            else:
+                ui.lineEdit_11.setText(result)
+        except:
+            ui.lineEdit_11.setText('wrong')
 def Prcnt3():
-    a = ui.lineEdit_20.text()
-    b = ui.lineEdit_16.text()
-    try:
-        fin = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
-        ui.lineEdit_17.setText(str(fin))
-    except:
-        ui.lineEdit_17.setText('wrong')
+    if ui.lineEdit_16.text() == '0':
+        s = ui.lineEdit_20.text()
+        ui.lineEdit_17.setText(s)
+    else:
+        a = ui.lineEdit_20.text()
+        b = ui.lineEdit_16.text()
+        try:
+            res = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
+            result = str(res)
+            if '.' in result:
+                a = result
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_17.setText(str(c))
+            elif '.' in result and result[-1] == '0':
+                result = result[:-1]
+                ui.lineEdit_17.setText(result)
+            elif result[-1] == '.':
+                result = result[:-1]
+                ui.lineEdit_17.setText(result)
+            else:
+                ui.lineEdit_17.setText(result)
+        except:
+            ui.lineEdit_17.setText('wrong')
 def Prcnt4():
-    a = ui.lineEdit_27.text()
-    b = ui.lineEdit_23.text()
-    try:
-        fin = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
-        ui.lineEdit_24.setText(str(fin))
-    except:
-        ui.lineEdit_24.setText('wrong')
+    if ui.lineEdit_23.text() == '0':
+        s = ui.lineEdit_27.text()
+        ui.lineEdit_24.setText(s)
+    else:
+        a = ui.lineEdit_27.text()
+        b = ui.lineEdit_23.text()
+        try:
+            res = Decimal(a) - (Decimal(a) / Decimal(100) * Decimal(b))
+            result = str(res)
+            if '.' in result:
+                a = result
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_24.setText(str(c))
+            elif '.' in result and result[-1] == '0':
+                result = result[:-1]
+                ui.lineEdit_24.setText(result)
+            elif result[-1] == '.':
+                result = result[:-1]
+                ui.lineEdit_24.setText(result)
+            else:
+                ui.lineEdit_24.setText(result)
+        except:
+            ui.lineEdit_24.setText('wrong')
 
 
 def Tether():
@@ -162,32 +281,84 @@ def Tether():
     value4 = ui.lineEdit_24.text()
     try:
         if value != '' and value1 != '':
-            tthr1 = Decimal(value1) / Decimal(value)
-            ui.lineEdit.setText(str(tthr1))
+            res1 = Decimal(value1) / Decimal(value)
+            result1 = str(res1)
+            if '.' in result1:
+                a = result1
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit.setText(str(c))
+            elif '.' in result1 and result1[-1] == '0':
+                result1 = result1[:-1]
+                ui.lineEdit.setText(result1)
+            elif result1[-1] == '.':
+                result1 = result1[:-1]
+                ui.lineEdit.setText(result1)
+            else:
+                ui.lineEdit.setText(result1)
         else:
             ui.lineEdit.setText('')
     except:
         ui.lineEdit.setText('wrong')
     try:
         if value != '' and value2 != '':
-            tthr2 = Decimal(value2) / Decimal(value)
-            ui.lineEdit_2.setText(str(tthr2))
+            res2 = Decimal(value2) / Decimal(value)
+            result2 = str(res2)
+            if '.' in result2:
+                a = result2
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_2.setText(str(c))
+            elif '.' in result2 and result2[-1] == '0':
+                result2 = result2[:-1]
+                ui.lineEdit_2.setText(result2)
+            elif result2[-1] == '.':
+                result2 = result2[:-1]
+                ui.lineEdit_2.setText(result2)
+            else:
+                ui.lineEdit_2.setText(result2)
         else:
             ui.lineEdit_2.setText('')
     except:
         ui.lineEdit_2.setText('wrong')
     try:
         if value != '' and value3 != '':
-            tthr3 = Decimal(value3) / Decimal(value)
-            ui.lineEdit_3.setText(str(tthr3))
+            res3 = Decimal(value3) / Decimal(value)
+            result3 = str(res3)
+            if '.' in result3:
+                a = result3
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_3.setText(str(c))
+            elif '.' in result3 and result3[-1] == '0':
+                result3 = result3[:-1]
+                ui.lineEdit_3.setText(result3)
+            elif result3[-1] == '.':
+                result3 = result3[:-1]
+                ui.lineEdit_3.setText(result3)
+            else:
+                ui.lineEdit_3.setText(result3)
         else:
             ui.lineEdit_3.setText('')
     except:
         ui.lineEdit_3.setText('wrong')
     try:
         if value != '' and value4 != '':
-            tthr4 = Decimal(value4) / Decimal(value)
-            ui.lineEdit_22.setText(str(tthr4))
+            res4 = Decimal(value4) / Decimal(value)
+            result4 = str(res4)
+            if '.' in result4:
+                a = result4
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_22.setText(str(c))
+            elif '.' in result4 and result4[-1] == '0':
+                result4 = result4[:-1]
+                ui.lineEdit_22.setText(result4)
+            elif result4[-1] == '.':
+                result4 = result4[:-1]
+                ui.lineEdit_22.setText(result4)
+            else:
+                ui.lineEdit_22.setText(result4)
         else:
             ui.lineEdit_22.setText('')
     except:
@@ -202,32 +373,84 @@ def Btc():
     value4 = ui.lineEdit_24.text()
     try:
         if value != '' and value1 != '':
-            tthr1 = Decimal(value1) / Decimal(value)
-            ui.lineEdit_7.setText(str(tthr1))
+            res1 = Decimal(value1) / Decimal(value)
+            result1 = str(res1)
+            if '.' in result1:
+                a = result1
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_7.setText(str(c))
+            elif '.' in result1 and result1[-1] == '0':
+                result1 = result1[:-1]
+                ui.lineEdit_7.setText(result1)
+            elif result1[-1] == '.':
+                result1 = result1[:-1]
+                ui.lineEdit_7.setText(result1)
+            else:
+                ui.lineEdit_7.setText(result1)
         else:
             ui.lineEdit_7.setText('')
     except:
         ui.lineEdit_7.setText('wrong')
     try:
         if value != '' and value2 != '':
-            tthr2 = Decimal(value2) / Decimal(value)
-            ui.lineEdit_15.setText(str(tthr2))
+            res2 = Decimal(value2) / Decimal(value)
+            result2 = str(res2)
+            if '.' in result2:
+                a = result2
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_15.setText(str(c))
+            elif '.' in result2 and result2[-1] == '0':
+                result2 = result2[:-1]
+                ui.lineEdit_15.setText(result2)
+            elif result2[-1] == '.':
+                result2 = result2[:-1]
+                ui.lineEdit_15.setText(result2)
+            else:
+                ui.lineEdit_15.setText(result2)
         else:
             ui.lineEdit_15.setText('')
     except:
         ui.lineEdit_15.setText('wrong')
     try:
         if value != '' and value3 != '':
-            tthr3 = Decimal(value3) / Decimal(value)
-            ui.lineEdit_21.setText(str(tthr3))
+            res3 = Decimal(value3) / Decimal(value)
+            result3 = str(res3)
+            if '.' in result3:
+                a = result3
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_21.setText(str(c))
+            elif '.' in result3 and result3[-1] == '0':
+                result3 = result3[:-1]
+                ui.lineEdit_21.setText(result3)
+            elif result3[-1] == '.':
+                result3 = result3[:-1]
+                ui.lineEdit_21.setText(result3)
+            else:
+                ui.lineEdit_21.setText(result3)
         else:
             ui.lineEdit_21.setText('')
     except:
         ui.lineEdit_21.setText('wrong')
     try:
         if value != '' and value4 != '':
-            tthr4 = Decimal(value4) / Decimal(value)
-            ui.lineEdit_28.setText(str(tthr4))
+            res4 = Decimal(value4) / Decimal(value)
+            result4 = str(res4)
+            if '.' in result4:
+                a = result4
+                b = float(a)
+                c = round(b, 8)
+                ui.lineEdit_28.setText(str(c))
+            elif '.' in result4 and result4[-1] == '0':
+                result4 = result4[:-1]
+                ui.lineEdit_28.setText(result4)
+            elif result4[-1] == '.':
+                result4 = result4[:-1]
+                ui.lineEdit_28.setText(result4)
+            else:
+                ui.lineEdit_28.setText(result4)
         else:
             ui.lineEdit_28.setText('')
     except:
@@ -246,24 +469,28 @@ def Cleartable1():
     ui.lineEdit_6.clear()
     ui.lineEdit_7.clear()
     ui.lineEdit.clear()
+    ui.tableWidget.setRowCount(20)
 def Cleartable2():
     ui.tableWidget_2.clearContents()
     ui.lineEdit_14.clear()
     ui.lineEdit_11.clear()
     ui.lineEdit_15.clear()
     ui.lineEdit_2.clear()
+    ui.tableWidget_2.setRowCount(20)
 def Cleartable3():
     ui.tableWidget_3.clearContents()
     ui.lineEdit_20.clear()
     ui.lineEdit_17.clear()
     ui.lineEdit_21.clear()
     ui.lineEdit_3.clear()
+    ui.tableWidget_3.setRowCount(20)
 def Cleartable4():
     ui.tableWidget_4.clearContents()
     ui.lineEdit_27.clear()
     ui.lineEdit_24.clear()
     ui.lineEdit_28.clear()
     ui.lineEdit_22.clear()
+    ui.tableWidget_4.setRowCount(20)
 
 def Clearall():
     ui.tableWidget.clearContents()
@@ -314,8 +541,16 @@ ui.tableWidget_2.cellChanged.connect(lambda: Summ2())
 ui.tableWidget_3.cellChanged.connect(lambda: Summ3())
 ui.tableWidget_4.cellChanged.connect(lambda: Summ4())
 
+ui.lineEdit_9.textChanged.connect(lambda: Tether())
+ui.lineEdit_5.textChanged.connect(lambda: Btc())
+
 ui.pushButton_8.clicked.connect(lambda: Tether())
 ui.pushButton_3.clicked.connect(lambda: Btc())
+
+ui.lineEdit_4.textChanged.connect(lambda: Prcnt1())
+ui.lineEdit_10.textChanged.connect(lambda: Prcnt2())
+ui.lineEdit_16.textChanged.connect(lambda: Prcnt3())
+ui.lineEdit_23.textChanged.connect(lambda: Prcnt4())
 
 ui.pushButton.clicked.connect(lambda: Prcnt1())
 ui.pushButton_2.clicked.connect(lambda: Prcnt2())
